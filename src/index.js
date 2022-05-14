@@ -1,14 +1,18 @@
+import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import configStore from './configStore';
+import Root from './components/Root';
+
+
+const store=configStore();
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Root store={store}/>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
